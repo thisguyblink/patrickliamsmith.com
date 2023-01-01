@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+h1 {
+    color: red;
+    background-color: aqua;
+}
+#Pages {
+    color: rgba(110, 10, 128, 1);
+    margin-left: 200px;
+    margin-top: auto;
+    border: 20px;
+    border-color: aqua;
+
+}
+#headerpic {
+    margin-left: 10px;
+    max-width: 1000px;
+    height: auto;
+}
+#Resumetitle {
+    font-size: 40px;
+    color: blue;
+}
