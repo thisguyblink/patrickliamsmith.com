@@ -4,21 +4,30 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 }
+header {
+    background-image: image("Images/Header Picture.jpg");
+}
 h1 {
-    color: red;
-    background-color: aqua;
+    color: rgb(42, 11, 199);
 }
-#Pages {
-    color: rgba(110, 10, 128, 1);
-    margin-left: 200px;
-    margin-top: auto;
-    border: 20px;
-    border-color: aqua;
 
+.flexbox-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 25px;
+    word-spacing: 5px;
+    flex-wrap: wrap;
 }
+.flexbox-item-1 {
+    width: 50px;
+    margin: 10px;
+    border: 2px black;
+}
+
 #headerpic {
     margin-left: 10px;
-    max-width: 1000px;
+    max-width: 500px;
     height: auto;
 }
 #Resumetitle {
