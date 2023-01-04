@@ -10,7 +10,11 @@ header {
 h1 {
     color: rgb(42, 11, 199);
 }
-
+.main-header {
+    background-image: url(Header\ Picture.jpg);
+    background-size: cover;
+    background-size: auto;
+}
 .flexbox-container {
     display: flex;
     justify-content: end;
@@ -33,4 +37,10 @@ h1 {
 #Resumetitle {
     font-size: 40px;
     color: blue;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
