@@ -1,4 +1,4 @@
-function bigImg(x) {
+/*function bigImg(x) {
     x.style.width = "95%";
     x.style.fontSize = "115%" ;
   }
@@ -10,4 +10,4 @@ function bigImg(x) {
   function myFunction(element ) {
     a.href = "Portfolio.html";
   }
-  
+  */
