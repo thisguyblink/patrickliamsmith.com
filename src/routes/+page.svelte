@@ -2,7 +2,10 @@
 	import PageColor from '$lib/backround.svelte';
 	import Navbar from '$lib/navbar.svelte';
 	import filmImage from '$lib/assets/IMG_7054.jpg';
+	import { dev } from '$app/environment';
 	import { inject } from '@vercel/analytics';
+
+	inject({ mode: dev ? 'development' : 'production' });
 </script>
 
 <PageColor />
