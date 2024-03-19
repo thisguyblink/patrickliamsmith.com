@@ -2,12 +2,11 @@
 	import PageColor from '$lib/backround.svelte';
 	import Navbar from '$lib/navbar.svelte';
 	import filmImage from '$lib/assets/IMG_7054.jpg';
-	import { Analytics } from '@vercel/analytics';
+	import { inject } from '@vercel/analytics';
 </script>
 
 <PageColor />
 <Navbar />
-<Analytics />
 <div id="pages">
 	<a href="/film">
 		<img class="buttonimg" src={filmImage} alt="Film" />
