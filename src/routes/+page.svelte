@@ -1,23 +1,17 @@
 <script>
+	import PageColor from '$lib/backround.svelte';
+	import Navbar from '$lib/navbar.svelte';
 </script>
 
-<div id="title">
-	<h1>Patrick Smith</h1>
-</div>
-
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<PageColor />
+<Navbar />
 
 <a href="/film">
 	<button id="film">Film</button>
 </a>
-<button id="computerScience">Computer Science</button>
+<a href="/compsci">
+	<button id="computerScience">Computer Science</button>
+</a>
 
 <style>
-	#title {
-		display: flex;
-		align-items: center;
-		color: blue;
-		margin-top: 30px;
-	}
 </style>
