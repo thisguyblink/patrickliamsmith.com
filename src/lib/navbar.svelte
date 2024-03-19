@@ -12,7 +12,7 @@
 	#nav {
 		display: flex;
 		justify-content: center;
-		justify-content: space-evenly;
+		justify-content: space-around;
 		font-size: 20px;
 		background-color: blue;
 		color: white;
