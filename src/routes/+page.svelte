@@ -1,6 +1,7 @@
 <script>
 	import PageColor from '$lib/backround.svelte';
 	import Navbar from '$lib/navbar.svelte';
+	import Bottombar from '../lib/bottombar.svelte';
 	import filmImage from '$lib/assets/IMG_7054.jpg';
 	import { dev } from '$app/environment';
 	import { inject } from '@vercel/analytics';
@@ -10,22 +11,24 @@
 
 <PageColor />
 <Navbar />
-<div id="pages">
+<Bottombar />
+<div class="pages">
 	<a href="/film">
 		<img class="buttonimg" src={filmImage} alt="Film" />
-		<div class="overlay1">Film</div>
+		<p class="overlay">Film</p>
 	</a>
 	<a href="/about">
 		<img id="portrait" src={filmImage} alt="Girl Dad or Hawaii" />
+		<p class="overlay1">About</p>
 	</a>
 	<a href="/compsci">
 		<img class="buttonimg" src={filmImage} alt="Film" />
-		<div class="overlay2">Computer Science</div>
+		<p class="overlay2">Computer <br /> Science</p>
 	</a>
 </div>
 
 <style>
-	#pages {
+	.pages {
 		position: relative;
 		display: flex;
 		justify-content: center;
@@ -33,16 +36,33 @@
 		margin-top: 50px;
 	}
 	.buttonimg {
+		border-radius: 10px;
+		border: 10px white;
 		height: 300px;
 		width: auto;
 	}
 	#portrait {
+		border-radius: 20px;
 		height: 250px;
+		border-width: 30px;
+	}
+	.overlay {
+		font-size: 25px;
+		position: relative;
+		left: 40%;
+		bottom: 50%;
 	}
 	.overlay1 {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+		font-size: 25px;
+		position: relative;
+		left: 30%;
+		bottom: 40%;
+	}
+	.overlay2 {
+		font-size: 25px;
+		position: relative;
+		left: 5%;
+		bottom: 55%;
+		text-align: center;
 	}
 </style>

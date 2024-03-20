@@ -14,8 +14,8 @@
 		justify-content: center;
 		justify-content: space-around;
 		font-size: 20px;
-		background-color: blue;
-		color: white;
+		background-color: #9197ae;
+		color: black;
 		padding: 20px;
 	}
 	#logo {
