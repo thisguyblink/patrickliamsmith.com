@@ -2,7 +2,6 @@
 	import PageColor from '$lib/backround.svelte';
 	import Navbar from '$lib/navbar.svelte';
 	import Bottombar from '../lib/bottombar.svelte';
-	import filmImage from '$lib/assets/IMG_7054.jpg';
 </script>
 
 <PageColor />
