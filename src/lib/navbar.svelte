@@ -1,11 +1,10 @@
 <script>
-	import logo from '$lib/assets/IMG_7054.jpg';
 </script>
 
 <div id="nav">
-	<img id="logo" src={logo} alt="Not found" />
+	<img id="logo" src="/static/assets/IMG_7054.jpg" alt="Not found" />
 	<h1 id="name">Patrick Smith</h1>
-	<img id="logo" src={logo} alt="Not found" />
+	<img id="logo" src="/static/assets/IMG_7054.jpg" alt="Not found" />
 </div>
 
 <style>

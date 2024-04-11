@@ -10,15 +10,15 @@
 <Bottombar />
 <div class="pages">
 	<a href="/film">
-		<img class="buttonimg" src={filmImage} alt="Film" />
+		<img class="buttonimg" src="/static/assets/IMG_7054.jpg" alt="Film" />
 		<p class="overlay">Film</p>
 	</a>
 	<a href="/about">
-		<img id="portrait" src={filmImage} alt="Girl Dad or Hawaii" />
+		<img id="portrait" src="/static/assets/IMG_7054.jpg" alt="Girl Dad or Hawaii" />
 		<p class="overlay1">About</p>
 	</a>
 	<a href="/compsci">
-		<img class="buttonimg" src={filmImage} alt="Film" />
+		<img class="buttonimg" src="/static/assets/IMG_7054.jpg" alt="Film" />
 		<p class="overlay2">Computer <br /> Science</p>
 	</a>
 </div>
