@@ -2,7 +2,6 @@
 
 <style>
 	body {
-		/* background-color: lightgreen; */
-		background: linear-gradient(to bottom right, #9197ae, #273043);
+		background-color: #a23e48;
 	}
 </style>
