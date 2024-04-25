@@ -8,56 +8,26 @@
 <Navbar />
 <Bottombar />
 <div class="pages">
-	<a href="/film">
-		<img class="buttonimg" src="/assets/IMG_7054.jpg" alt="Film" />
-		<p class="overlay">Film</p>
-	</a>
-	<a href="/about">
-		<img id="portrait" src="/assets/IMG_7054.jpg" alt="Girl Dad or Hawaii" />
-		<p class="overlay1">About</p>
-	</a>
-	<a href="/compsci">
-		<img class="buttonimg" src="/assets/IMG_7054.jpg" alt="Film" />
-		<p class="overlay2">Computer <br /> Science</p>
-	</a>
+	<div id="cs"></div>
+	<div id="film"></div>
 </div>
 
 <style>
 	.pages {
-		position: relative;
 		display: flex;
-		justify-content: center;
+		width: 100%;
+		height: 600px;
+		max-height: 1000px;
 		justify-content: space-around;
-		margin-top: 50px;
+		flex-wrap: wrap;
 	}
-	.buttonimg {
-		border-radius: 10px;
-		border: 10px white;
-		height: 300px;
-		width: auto;
+	#cs {
+		width: 40%;
+		background-color: red;
 	}
-	#portrait {
-		border-radius: 20px;
-		height: 250px;
-		border-width: 30px;
-	}
-	.overlay {
-		font-size: 25px;
-		position: relative;
-		left: 40%;
-		bottom: 50%;
-	}
-	.overlay1 {
-		font-size: 25px;
-		position: relative;
-		left: 30%;
-		bottom: 40%;
-	}
-	.overlay2 {
-		font-size: 25px;
-		position: relative;
-		left: 5%;
-		bottom: 55%;
-		text-align: center;
+
+	#film {
+		width: 40%;
+		background-color: blue;
 	}
 </style>
