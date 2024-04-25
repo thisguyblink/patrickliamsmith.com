@@ -31,14 +31,12 @@
 		font-size: 20px;
 		background-color: #9197ae;
 		padding: 20px;
-		border: 2px solid orange;
 		background-color: #1d2a34;
 	}
 	.logo {
 		height: 40px;
 		width: auto;
 		padding: 25px;
-		border: 2px solid orange;
 	}
 	.menu {
 		margin-top: 15px;
@@ -46,27 +44,30 @@
 		width: auto;
 		height: 50%;
 		justify-content: space-around;
-		border: 2px solid orange;
 	}
 	#name {
 		font-size: 45px;
 		color: white;
-		border: 2px solid orange;
 	}
 	.pages {
 		width: auto;
 		height: 50%;
-		border: 2px solid pink;
 		padding-left: 10px;
 		padding-right: 10px;
+		padding-top: -5px;
+		padding-bottom: -5px;
 		color: white;
 	}
 	.pages a {
 		text-decoration: none;
+		color: white;
 	}
 	.pages:hover {
 		text-decoration: bold; /* Add underline on hover */
 		color: black;
 		background-color: white;
+	}
+	.pages a:hover {
+		color: black;
 	}
 </style>
