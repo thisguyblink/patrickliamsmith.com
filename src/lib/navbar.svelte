@@ -32,7 +32,7 @@
 		background-color: #9197ae;
 		padding: 20px;
 		border: 2px solid orange;
-		background-color: black;
+		background-color: #1d2a34;
 	}
 	.logo {
 		height: 40px;
@@ -59,14 +59,14 @@
 		border: 2px solid pink;
 		padding-left: 10px;
 		padding-right: 10px;
+		color: white;
 	}
 	.pages a {
-		color: white;
 		text-decoration: none;
 	}
-	.pages a:hover {
+	.pages:hover {
 		text-decoration: bold; /* Add underline on hover */
-		color: blue;
-		font-size: 22px;
+		color: black;
+		background-color: white;
 	}
 </style>

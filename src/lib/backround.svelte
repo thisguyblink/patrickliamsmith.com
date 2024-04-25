@@ -2,6 +2,6 @@
 
 <style>
 	body {
-		background-color: #a23e48;
+		background-color: #3e8989;
 	}
 </style>
