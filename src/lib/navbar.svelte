@@ -2,7 +2,7 @@
 </script>
 
 <div class="nav">
-	<img class="logo" src="/assets/IMG_7054.jpg" alt="Not found" />
+	<img class="logo" src="/assets/PS.png" alt="Not found" />
 	<h1 id="name">PATRICK SMITH</h1>
 	<div class="menu">
 		<div class="pages">
@@ -37,6 +37,7 @@
 		height: 40px;
 		width: auto;
 		padding: 25px;
+		margin-top: 10px;
 	}
 	.menu {
 		margin-top: 15px;
