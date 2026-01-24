@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from "svelte";
 	import * as THREE from "three";
+	import { goto } from '$app/navigation';
 
 	let leftContainer;
 	let rightContainer;
@@ -78,11 +79,11 @@
 				metalness: 0.1,
 				roughness: 0.05,
 				transparent: true,
-				opacity: 0.8,
+				opacity: 0.9,
 				transmission: 0.99,
 				clearcoat: 1,
 				clearcoatRoughness: 0.05,
-				reflectivity: 0.9,
+				reflectivity: 1,
 			});
 
 		const wireframeMaterial = new THREE.MeshBasicMaterial({
@@ -165,10 +166,19 @@
 			rightRenderer.dispose();
 		};
 	});
+
+	function goToScroll() {
+		goto('/scroll');
+	}
 </script>
 
 <div class="container">
-	<div bind:this={leftContainer} class="scene"></div>
+	<button
+		bind:this={leftContainer}
+		class="scene"
+		type="button"
+		on:click={goToScroll}
+	></button>
 	<div bind:this={rightContainer} class="scene"></div>
 </div>
 
