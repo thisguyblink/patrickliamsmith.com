@@ -4,7 +4,6 @@
 
 	let mouseX, mouseY;
 	let cameraX, cameraY;
-	let maxX, maxY;
 	let flips;
 
 	let flipperWindow;
@@ -33,10 +32,10 @@
 		let normalizedX = (mouseX / dimensions.width) * cameraX;
 		let normalizedY =  ( 1- mouseY / dimensions.height) * cameraY;
 		let cubePositions = []
-		cubePositions.push([Math.floor(normalizedX), Math.floor(normalizedY)]);
-		cubePositions.push([Math.ceil(normalizedX), Math.floor(normalizedY)]);
-		cubePositions.push([Math.floor(normalizedX), Math.ceil(normalizedY)]);
-		cubePositions.push([Math.ceil(normalizedX), Math.ceil(normalizedY)]);
+		cubePositions.push([Math.floor(normalizedY), Math.floor(normalizedX)]);
+		cubePositions.push([Math.ceil(normalizedY), Math.floor(normalizedX)]);
+		cubePositions.push([Math.floor(normalizedY), Math.ceil(normalizedX)]);
+		cubePositions.push([Math.ceil(normalizedY), Math.ceil(normalizedX)]);
 		return cubePositions;
 	}
 
@@ -88,18 +87,20 @@
 		let cubes = []
 		let cubeRow = []
 		console.log("Dimensions: ", width, height);
-		for (let col = -halfW; col <= halfW; col++) {
-			for (let row = -halfH; row <= halfH; row++) {
-				let cube = new THREE.Mesh( geometry, material );
+		for (let row = -halfH; row <= halfH; row++) {
+			for (let col = -halfW; col <= halfW; col++) {
+				let cube = new THREE.Mesh(geometry, material);
 				cube.position.x = col;
 				cube.position.y = row;
-				scene.add( cube );
-				cubeRow.push( cube );
+				scene.add(cube);
+
+				cubeRow.push(cube);
 				numCubes++;
 			}
 			cubes.push([...cubeRow]);
 			cubeRow.length = 0;
 		}
+
 		console.log("Num of Cubes: ", numCubes);
 
 		function animate() {
@@ -145,21 +146,21 @@
 </div>
 
 <style>
-		.main {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-		}
-		.flipperBox{
-				display: flex;
-				justify-content: center;
-				position: relative;
-				width: 100%;
-				max-width: 1400px;
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .flipperBox{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        max-width: 1400px;
         aspect-ratio: 16 / 9;
-				border: 5px solid red;
-		}
-	.flipper {
-			border: 5px solid green;
-	}
+        border: 5px solid red;
+    }
+    .flipper {
+        border: 5px solid green;
+    }
 </style>
