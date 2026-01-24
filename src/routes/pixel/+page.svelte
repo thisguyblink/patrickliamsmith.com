@@ -1,6 +1,6 @@
 <script>
 	let width = 40;
-	let height = 20;
+	let height = 30;
 	let values = [];
 
 	for (let row = 0; row < height; row++) {
