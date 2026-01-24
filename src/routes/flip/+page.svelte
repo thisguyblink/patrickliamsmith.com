@@ -8,6 +8,7 @@
 
 	let flipperWindow;
 	let isInside = false;
+	let initialsMap = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0,1,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
 
 	function handleMouseMove(event) {
 		const rect = flipperWindow.getBoundingClientRect();
@@ -25,17 +26,17 @@
 	}
 
 	function calculateCubesToFlip() {
-		if (!flipperWindow) return;
+		if (!flipperWindow) return [];
 
 		let dimensions = flipperWindow.getBoundingClientRect();
-		// console.log( dimensions.right, dimensions.bottom, mouseX, mouseY);
 		let normalizedX = (mouseX / dimensions.width) * cameraX;
-		let normalizedY =  ( 1- mouseY / dimensions.height) * cameraY;
+		let normalizedY =  ( 1 - mouseY / dimensions.height) * cameraY;
 		let cubePositions = []
 		cubePositions.push([Math.floor(normalizedY), Math.floor(normalizedX)]);
 		cubePositions.push([Math.ceil(normalizedY), Math.floor(normalizedX)]);
 		cubePositions.push([Math.floor(normalizedY), Math.ceil(normalizedX)]);
 		cubePositions.push([Math.ceil(normalizedY), Math.ceil(normalizedX)]);
+		// console.log(cubePositions);
 		return cubePositions;
 	}
 
@@ -53,42 +54,43 @@
 		const geometry = new THREE.BoxGeometry( 1, .1, 1 ).toNonIndexed();
 		const positionAttribute = geometry.getAttribute( 'position' );
 		const colors = [];
-		const color = new THREE.Color();
+		const colorsAlt = [];
+		const colorAlt = new THREE.Color(0x7C9EB2);
 		const colorBlack = new THREE.Color(0x000000);
 		const colorWhite = new THREE.Color(0xffffff);
-
 		for ( let i = 0; i < positionAttribute.count; i += 3 ) {
-
-			color.set( Math.random() * 0xffffff );
-			console.log("Position Attribute: ", i);
 			if (i <= 15) {
-				colors.push(colorWhite.r, colorWhite.g, colorWhite.b);
-				colors.push(colorWhite.r, colorWhite.g, colorWhite.b);
-				colors.push(colorWhite.r, colorWhite.g, colorWhite.b);
+				for ( let i = 0; i < 3; i++) {
+					colors.push(colorWhite.r, colorWhite.g, colorWhite.b);
+					colorsAlt.push(colorAlt.r, colorAlt.g, colorAlt.b);
+				}
 			} else {
-				console.log("Color Attribute: ", color.r, color.g, color.b  );
-				colors.push( colorBlack.r, colorBlack.g, colorBlack.b);
-				colors.push(colorBlack.r, colorBlack.g, colorBlack.b );
-				colors.push( colorBlack.r, colorBlack.g, colorBlack.b);
+				for ( let i = 0; i < 3; i++) {
+					colors.push( colorBlack.r, colorBlack.g, colorBlack.b);
+				}
 			}
 		}
 		geometry.setAttribute( 'color', new THREE.Float32BufferAttribute( colors, 3 ) );
+		const geometryAlt = new THREE.BoxGeometry( 1, .1, 1 ).toNonIndexed();
+		geometryAlt.setAttribute( 'color', new THREE.Float32BufferAttribute( colorsAlt, 3 ) );
 
 		camera.position.z = 15;
 		const distance = camera.position.z;
 		const vFOV = THREE.MathUtils.degToRad(camera.fov);
-		let height = 2 * Math.tan(vFOV / 2) * distance;
-		let width = ( height * camera.aspect);
+		let height = Math.ceil( 2 * Math.tan(vFOV / 2) * distance);
+		let width = Math.ceil( height * camera.aspect);
 		cameraX = width;
 		cameraY = height;
-		const halfW = width / 2;
-		const halfH = height / 2;
 		let numCubes = 0;
 		let cubes = []
 		let cubeRow = []
 		console.log("Dimensions: ", width, height);
-		for (let row = -halfH; row <= halfH; row++) {
-			for (let col = -halfW; col <= halfW; col++) {
+		let rowIndex = 0;
+		let colIndex = 0;
+		for (let row = -height/2; row < height/2; row++) {
+			for (let col = -width/2; col < width/2; col++) {
+				console.log("row: ", row);
+				console.log("col: ", col);
 				let cube = new THREE.Mesh(geometry, material);
 				cube.position.x = col;
 				cube.position.y = row;
@@ -96,7 +98,9 @@
 
 				cubeRow.push(cube);
 				numCubes++;
+				colIndex++;
 			}
+			rowIndex++;
 			cubes.push([...cubeRow]);
 			cubeRow.length = 0;
 		}
@@ -113,7 +117,6 @@
 			for (let row = 0; row < cubes.length; row++) {
 				for (let col = 0; col < cubes[row].length; col++) {
 					const shouldFlip = cubesToFLip.some(([r, c]) => r === row && c === col);
-
 					if (shouldFlip) {
 						cubes[row][col].rotation.x += (targetRotationX - cubes[row][col].rotation.x) * 0.2;
 					} else {
