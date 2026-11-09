@@ -24,5 +24,5 @@
               calc(sin(var(--angle)) * var(--radius))
       );
 	}
-	
+
 </style>
