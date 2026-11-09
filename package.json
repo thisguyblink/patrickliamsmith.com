@@ -15,7 +15,6 @@
 		}
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^8.0.0",
 		"@sveltejs/adapter-vercel": "^7.0.2",
 		"@sveltejs/kit": "^3.1.1",
 		"@sveltejs/vite-plugin-svelte": "^7.3.1",
@@ -30,7 +29,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-auto": "^3.0.0",
 		"@vercel/analytics": "^1.2.2",
 		"three": "^0.180.0"
 	},
