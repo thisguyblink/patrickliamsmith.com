@@ -1,0 +1,25 @@
+.main-page.svelte-1veoa60 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+.circle.svelte-1veoa60 {
+	position: relative;
+	width: 300px;
+	height: 300px;
+}
+.circleObject.svelte-1veoa60 {
+	--angle: calc(360deg / var(--total) * var(--i));
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%)
+		translate(calc(cos(var(--angle)) * var(--radius)), calc(sin(var(--angle)) * var(--radius)));
+	background-color: coral;
+	border: solid 2px aqua;
+}
+p.svelte-1veoa60 {
+	margin: 0;
+	padding: 0.5rem 0.75rem;
+}
